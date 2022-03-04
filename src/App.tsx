@@ -1,9 +1,8 @@
 // import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import TitleClass from './components/title_class';
-// import TitleFunctional from './components/title_functional';
 import Title from './components/title_functional';
+import Contador from './components/contador_class';
 
 // function Title(props: any) {
 //   return <div>
@@ -17,7 +16,8 @@ function App() {
   return (
     <div className="App">
       <h1>Hola Soy {name} </h1>
-      <Title name='Goku' lastName='Emilio'/>
+      <Title name='Goku' lastName='Emilio' />
+      <Contador title='Vegetta' />
       {/* <Title name={'goku'} apellido={'stward'} /> */}
       {/* <TitleFunctional name={'Hola soy Veguetta'} /> */}
       {/* <TitleClass name={'Hola soy Goku'}/>
