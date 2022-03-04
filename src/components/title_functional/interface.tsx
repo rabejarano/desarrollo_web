@@ -1,0 +1,1 @@
+export default interface ITitle { name: string, lastName: string };
