@@ -1,43 +1,72 @@
-// import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Title from './components/title_functional';
-import Contador from './components/contador_class';
+import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 
-// function Title(props: any) {
-//   return <div>
-//     <h1>Nombre {props.name}</h1>
-//     <h2>Apellido {props.apellido}</h2>
-//   </div>;
-// }
+// npm install --save react-router-dom
+// npm install --save @types/react-router-dom
 
-const name = 'Goku';
-function App() {
-  return (
-    <div className="App">
-      <h1>Hola Soy {name} </h1>
-      <Title name='Goku' lastName='Emilio' />
-      <Contador title='Vegetta' />
-      {/* <Title name={'goku'} apellido={'stward'} /> */}
-      {/* <TitleFunctional name={'Hola soy Veguetta'} /> */}
-      {/* <TitleClass name={'Hola soy Goku'}/>
-       */}
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-    </div>
-  );
+export default function App() {
+
+  return <Router >
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about/:id" element={<About />} />
+      <Route path="/users" element={<Users />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </Router >;
 }
 
-export default App;
+function Home() {
+  let navigate = useNavigate();
+
+  return <div>
+    <h2>Home</h2>
+    <button onClick={() => {
+      navigate('/about/12345667', { replace: true });
+    }}>navigate to about</button>
+    <button onClick={() => {
+      navigate(-1);
+    }}>atras</button>
+    <button onClick={() => {
+      navigate('/', { replace: true });
+    }}>reset navigator</button>
+  </div >;
+}
+
+type QueryParams = { id: string };
+
+function About() {
+  let params: Readonly<Partial<QueryParams>> = useParams<QueryParams>();
+  let navigate = useNavigate();
+
+  return <div>
+
+    <h2>About {params.id}</h2>;
+
+    <button onClick={() => {
+      navigate(-1);
+    }}>Atras</button>
+  </div >;
+
+}
+
+function Users() {
+  let navigate = useNavigate();
+  return <div>
+
+    <h2>Users</h2>;
+    <button onClick={() => {
+      navigate('/', { replace: true });
+    }}>Atras</button>
+  </div >;
+}
+
+function NotFound() {
+  return <h2>404</h2>;
+}
