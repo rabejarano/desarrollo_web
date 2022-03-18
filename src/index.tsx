@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+// import App from './App';
+// import Flex from './Flex';
+import Grid from './Grid';
+
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Grid />
   </React.StrictMode>,
   document.getElementById('root')
 );

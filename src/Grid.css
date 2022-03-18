@@ -1,0 +1,117 @@
+html, body{
+  /* height: 100vh; */
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Basics  */
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: [v1] 100px [v2] 100px [v3] 100px [line4];
+  grid-template-rows: [r1] 100px [r2] 100px [r3];
+  column-gap: 20px;
+  row-gap: 100px;
+  /* Align row */
+  /* justify-items: start; */
+  /* Align column */
+  /* align-items: start; */
+  /* Align content row If it doesn't occupy the entire View */
+  justify-content: start;
+  /* Align content column If it doesn't occupy the entire View */
+  align-content: end;
+}
+
+.elmt1{
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
+.elmt2{
+  background-color: purple;
+  width: 100px;
+  height: 100px;
+}
+.elmt3{
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+}
+
+.elmt4{
+  background-color: blue;
+  width: 100px;
+  height: 100px;
+}
+
+.elmt5{
+  background-color: brown;
+  width: 100px;
+  height: 100px;
+}
+.elmt6{
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
+}
+
+
+
+/* Areas */
+
+.areas {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+}
+
+.area1 {
+  grid-area: header;
+  background-color: coral;
+}
+.area2 {
+  grid-area: main;
+  background-color: aqua;
+}
+.area3 {
+  grid-area: sidebar;
+  background-color: rebeccapurple;
+}
+.area4 {
+  grid-area: footer;
+  background-color: green;
+}
+
+
+
+
+/* Childrens  */
+
+.childrens{
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: [v1] 10% [v2] 10% [v3] auto [v4] 10% [v5] 10% [v6];
+  grid-template-rows: [r1] 20% [r2] auto [r3] 30% [r4];
+}
+
+.child1{
+    grid-column-start: v2;
+    grid-column-end: v5;
+    grid-row-start: r1;
+    grid-row-end: r3;
+    background-color: red;
+    /* Align Row If it doesn't occupy the entire Area  */
+    justify-self: start;
+    /* Align Column If it doesn't occupy the entire Area  */
+    align-self: start;
+    width: 100px;
+    height: 100px;
+}
