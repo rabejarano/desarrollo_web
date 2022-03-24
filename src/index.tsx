@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
 // import Flex from './Flex';
-import Grid from './Grid';
+// import Grid from './Grid';
+import NewFlex from './NewFlex';
 
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Grid />
+    <NewFlex name={'goku'} lastName={'Emilio'} />
   </React.StrictMode>,
   document.getElementById('root')
 );
