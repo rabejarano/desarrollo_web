@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 // import Flex from './Flex';
 // import Grid from './Grid';
-import NewFlex from './NewFlex';
+// import NewFlex from './NewFlex';
+import PromiseView from './Promise';
 
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <NewFlex name={'goku'} lastName={'Emilio'} />
+    <PromiseView />
   </React.StrictMode>,
   document.getElementById('root')
 );
