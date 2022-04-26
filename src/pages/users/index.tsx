@@ -10,7 +10,11 @@ function Users() {
         <button onClick={() => {
             navigate('/', { replace: true });
         }}>Atras</button>
-    </div >;
+        <button onClick={() => {
+            let key: string = 'Item1';
+            localStorage.removeItem(key);
+        }}>Clear Storage</button>
+    </div >
 }
 
 export default Users;

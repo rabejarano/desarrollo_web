@@ -1,4 +1,5 @@
 
+import { useEffect } from "react";
 import {
     useNavigate,
     NavigateFunction
@@ -7,6 +8,13 @@ import {
 
 function Home() {
     let navigate: NavigateFunction = useNavigate();
+    useEffect(() => {
+        let key: string = 'Item1';
+        let valueItem1 = localStorage.getItem(key);
+        if (!!valueItem1) {
+            navigate('/users');
+        }
+    });
 
     return <div>
         <h2>Home</h2>
@@ -19,6 +27,11 @@ function Home() {
         <button onClick={() => {
             navigate('/', { replace: true });
         }}>reset navigator</button>
+        <button onClick={() => {
+            let key: string = 'Item1';
+            localStorage.setItem(key, 'Hola soy Goku');
+            navigate('/users');
+        }}>Login</button>
     </div >;
 }
 
